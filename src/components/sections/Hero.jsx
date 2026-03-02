@@ -36,7 +36,7 @@ const Hero = () => {
       value: '40%',
       label: 'Decrease in customer phone calls',
       valueClass: 'text-orange-500',
-      positionClass: 'top-[10%] left-[48%] md:top-[10%] md:left-[55%]',
+      positionClass: 'top-[10%] left-[48%] md:top-[15%] md:left-[60%]',
     },
   ]
 
@@ -119,9 +119,9 @@ const Hero = () => {
 
         <div className="absolute inset-0 z-10 pointer-events-none bg-[radial-gradient(circle_at_center,transparent_0%,black_100%)] opacity-80" />
 
-        <div className="absolute z-20 top-[38%] left-[6cqw] md:top-[40%] md:left-24 lg:left-32 pointer-events-none">
+        <div className="absolute z-20 top-[38%] left-[6cqw] md:top-[40%] md:left-[6cqw] pointer-events-none">
           <h1
-            className="block text-left text-[clamp(2.4rem,6cqw,6.5rem)] md:text-[clamp(3.5rem,8cqw,10rem)] font-black uppercase leading-[0.95] tracking-[0.06em] md:tracking-[0.09em] drop-shadow-2xl"
+            className="block text-left text-[clamp(2rem,5cqw,5rem)] md:text-[clamp(3rem,6cqw,7.5rem)] font-black uppercase leading-[0.95] tracking-[0.06em] md:tracking-[0.09em] drop-shadow-2xl"
           >
             {titleWords.map((word, index) => (
               <span
