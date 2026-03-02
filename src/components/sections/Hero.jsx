@@ -13,6 +13,32 @@ const Hero = () => {
   const heroLineRef = useRef(null)
   const cardsRef = useRef([])
   const titleWords = ['WELCOME', 'ITZFIZZ']
+  const statCards = [
+    {
+      value: '58%',
+      label: 'Increase in pick up point use',
+      valueClass: 'text-[#d4ff32]',
+      positionClass: 'top-[12%] right-[4%] sm:right-[8%] md:top-[15%] md:right-[10%]',
+    },
+    {
+      value: '27%',
+      label: 'Increase in pick up point use',
+      valueClass: 'text-white',
+      positionClass: 'bottom-[16%] right-[24%] sm:right-[20%] md:bottom-[20%] md:right-[25%]',
+    },
+    {
+      value: '23%',
+      label: 'Decrease in customer phone calls',
+      valueClass: 'text-sky-400',
+      positionClass: 'top-[58%] right-[3%] md:top-[60%] md:right-[5%]',
+    },
+    {
+      value: '40%',
+      label: 'Decrease in customer phone calls',
+      valueClass: 'text-orange-500',
+      positionClass: 'top-[10%] left-[48%] md:top-[10%] md:left-[55%]',
+    },
+  ]
 
   const setWordRef = (index) => (element) => {
     titleWordsRef.current[index] = element
@@ -85,17 +111,17 @@ const Hero = () => {
   }, { scope: sectionRef })
 
   return (
-    <section ref={sectionRef} className="relative h-[165vh] w-full">
-      <div className="sticky top-0 h-screen overflow-hidden bg-black">
+    <section ref={sectionRef} className="relative h-[175svh] w-full md:h-[165vh]">
+      <div className="sticky top-0 h-[100svh] overflow-hidden bg-black">
         <div ref={splineRef} className="spline-bg absolute inset-x-0 -top-[28%] -bottom-[12%] z-0 pointer-events-none">
           <Spline scene="https://prod.spline.design/QE5OQ5o5XPMEjIYp/scene.splinecode" />
         </div>
 
         <div className="absolute inset-0 z-10 pointer-events-none bg-[radial-gradient(circle_at_center,transparent_0%,black_100%)] opacity-80" />
 
-        <div className="absolute z-20 top-[40%] left-8 md:left-24 lg:left-32 pointer-events-none">
+        <div className="absolute z-20 top-[38%] left-[6vw] md:top-[40%] md:left-24 lg:left-32 pointer-events-none">
           <h1
-            className="block w-max text-left text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase leading-[0.95] tracking-[0.08em] md:tracking-[0.09em] drop-shadow-2xl"
+            className="block text-left text-[clamp(2.4rem,8vw,7.5rem)] font-black uppercase leading-[0.95] tracking-[0.06em] md:tracking-[0.09em] drop-shadow-2xl"
           >
             {titleWords.map((word, index) => (
               <span
@@ -109,41 +135,20 @@ const Hero = () => {
           </h1>
           <div
             ref={heroLineRef}
-            className="mt-8 h-[2px] w-[260px] bg-cyan-400 shadow-[0_0_15px_rgba(34,211,238,0.6)]"
+            className="mt-6 md:mt-8 h-[2px] w-[clamp(160px,22vw,260px)] bg-cyan-400 shadow-[0_0_15px_rgba(34,211,238,0.6)]"
           />
         </div>
 
-        <div
-          ref={setCardRef(0)}
-          className="absolute z-30 top-[15%] right-[10%] w-[320px] pointer-events-auto flex flex-col justify-center rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-md shadow-2xl transition-transform hover:-translate-y-2"
-        >
-          <span className="text-4xl lg:text-5xl font-bold text-[#d4ff32] mb-2">58%</span>
-          <span className="text-sm font-medium text-neutral-400">Increase in pick up point use</span>
-        </div>
-
-        <div
-          ref={setCardRef(1)}
-          className="absolute z-30 bottom-[20%] right-[25%] w-[320px] pointer-events-auto flex flex-col justify-center rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-md shadow-2xl transition-transform hover:-translate-y-2"
-        >
-          <span className="text-4xl lg:text-5xl font-bold text-white mb-2">27%</span>
-          <span className="text-sm font-medium text-neutral-400">Increase in pick up point use</span>
-        </div>
-
-        <div
-          ref={setCardRef(2)}
-          className="absolute z-30 top-[60%] right-[5%] w-[320px] pointer-events-auto flex flex-col justify-center rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-md shadow-2xl transition-transform hover:-translate-y-2"
-        >
-          <span className="text-4xl lg:text-5xl font-bold text-sky-400 mb-2">23%</span>
-          <span className="text-sm font-medium text-neutral-400">Decrease in customer phone calls</span>
-        </div>
-
-        <div
-          ref={setCardRef(3)}
-          className="absolute z-30 top-[10%] left-[55%] w-[320px] pointer-events-auto flex flex-col justify-center rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-md shadow-2xl transition-transform hover:-translate-y-2"
-        >
-          <span className="text-4xl lg:text-5xl font-bold text-orange-500 mb-2">40%</span>
-          <span className="text-sm font-medium text-neutral-400">Decrease in customer phone calls</span>
-        </div>
+        {statCards.map((card, index) => (
+          <div
+            key={card.value}
+            ref={setCardRef(index)}
+            className={`absolute z-30 ${card.positionClass} w-[min(44vw,220px)] sm:w-[min(40vw,260px)] md:w-[280px] lg:w-[320px] pointer-events-auto flex flex-col justify-center rounded-xl md:rounded-2xl border border-white/10 bg-white/5 p-3 sm:p-4 md:p-6 lg:p-8 backdrop-blur-md shadow-2xl transition-transform hover:-translate-y-2`}
+          >
+            <span className={`mb-1 sm:mb-2 text-3xl sm:text-4xl lg:text-5xl font-bold ${card.valueClass}`}>{card.value}</span>
+            <span className="text-[11px] sm:text-xs lg:text-sm font-medium text-neutral-400">{card.label}</span>
+          </div>
+        ))}
       </div>
     </section>
   )
