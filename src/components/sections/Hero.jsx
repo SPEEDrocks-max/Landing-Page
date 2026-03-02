@@ -112,16 +112,16 @@ const Hero = () => {
 
   return (
     <section ref={sectionRef} className="relative h-[175svh] w-full md:h-[165vh]">
-      <div className="sticky top-0 h-[100svh] overflow-hidden bg-black">
+      <div className="sticky top-0 h-[100svh] overflow-hidden bg-black @container">
         <div ref={splineRef} className="spline-bg absolute inset-x-0 -top-[28%] -bottom-[12%] z-0 pointer-events-none">
           <Spline scene="https://prod.spline.design/QE5OQ5o5XPMEjIYp/scene.splinecode" />
         </div>
 
         <div className="absolute inset-0 z-10 pointer-events-none bg-[radial-gradient(circle_at_center,transparent_0%,black_100%)] opacity-80" />
 
-        <div className="absolute z-20 top-[38%] left-[6%] md:top-[40%] md:left-24 lg:left-32 pointer-events-none">
+        <div className="absolute z-20 top-[38%] left-[6cqw] md:top-[40%] md:left-24 lg:left-32 pointer-events-none">
           <h1
-            className="block text-left text-[clamp(6.0rem,8%,7.5rem)] font-black uppercase leading-[0.95] tracking-[0.06em] md:tracking-[0.09em] drop-shadow-2xl"
+            className="block text-left text-[clamp(2.4rem,6cqw,6.5rem)] md:text-[clamp(3.5rem,8cqw,10rem)] font-black uppercase leading-[0.95] tracking-[0.06em] md:tracking-[0.09em] drop-shadow-2xl"
           >
             {titleWords.map((word, index) => (
               <span
@@ -135,7 +135,7 @@ const Hero = () => {
           </h1>
           <div
             ref={heroLineRef}
-            className="mt-6 md:mt-8 h-[2px] w-[clamp(160px,22%,260px)] bg-cyan-400 shadow-[0_0_15px_rgba(34,211,238,0.6)]"
+            className="mt-6 md:mt-8 h-[2px] w-[clamp(160px,22cqw,260px)] bg-cyan-400 shadow-[0_0_15px_rgba(34,211,238,0.6)]"
           />
         </div>
 
