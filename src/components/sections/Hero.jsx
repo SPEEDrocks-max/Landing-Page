@@ -119,9 +119,9 @@ const Hero = () => {
 
         <div className="absolute inset-0 z-10 pointer-events-none bg-[radial-gradient(circle_at_center,transparent_0%,black_100%)] opacity-80" />
 
-        <div className="absolute z-20 top-[38%] left-[6vw] md:top-[40%] md:left-24 lg:left-32 pointer-events-none">
+        <div className="absolute z-20 top-[38%] left-[6%] md:top-[40%] md:left-24 lg:left-32 pointer-events-none">
           <h1
-            className="block text-left text-[clamp(2.4rem,8vw,7.5rem)] font-black uppercase leading-[0.95] tracking-[0.06em] md:tracking-[0.09em] drop-shadow-2xl"
+            className="block text-left text-[clamp(6.0rem,8%,7.5rem)] font-black uppercase leading-[0.95] tracking-[0.06em] md:tracking-[0.09em] drop-shadow-2xl"
           >
             {titleWords.map((word, index) => (
               <span
@@ -135,7 +135,7 @@ const Hero = () => {
           </h1>
           <div
             ref={heroLineRef}
-            className="mt-6 md:mt-8 h-[2px] w-[clamp(160px,22vw,260px)] bg-cyan-400 shadow-[0_0_15px_rgba(34,211,238,0.6)]"
+            className="mt-6 md:mt-8 h-[2px] w-[clamp(160px,22%,260px)] bg-cyan-400 shadow-[0_0_15px_rgba(34,211,238,0.6)]"
           />
         </div>
 
@@ -143,10 +143,10 @@ const Hero = () => {
           <div
             key={card.value}
             ref={setCardRef(index)}
-            className={`absolute z-30 ${card.positionClass} w-[min(44vw,220px)] sm:w-[min(40vw,260px)] md:w-[280px] lg:w-[320px] pointer-events-auto flex flex-col justify-center rounded-xl md:rounded-2xl border border-white/10 bg-white/5 p-3 sm:p-4 md:p-6 lg:p-8 backdrop-blur-md shadow-2xl transition-transform hover:-translate-y-2`}
+            className={`absolute z-30 ${card.positionClass} w-[min(44%,220px)] sm:w-[min(40%,260px)] md:w-[280px] lg:w-[320px] pointer-events-auto flex flex-col justify-center rounded-xl md:rounded-2xl border border-white/10 bg-white/5 p-3 sm:p-4 md:p-6 lg:p-8 backdrop-blur-md shadow-2xl transition-transform hover:-translate-y-2`}
           >
             <span className={`mb-1 sm:mb-2 text-3xl sm:text-4xl lg:text-5xl font-bold ${card.valueClass}`}>{card.value}</span>
-            <span className="text-[11px] sm:text-xs lg:text-sm font-medium text-neutral-400">{card.label}</span>
+            <span className="text-[11px] sm:text-xs lg:text-xl font-medium text-white">{card.label}</span>
           </div>
         ))}
       </div>
